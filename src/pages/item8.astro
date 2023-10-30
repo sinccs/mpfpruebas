@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card1 from '../components/Card1.astro';
+import Card2 from '../components/Card2.astro';
+import Card3 from '../components/Card3.astro';
+import Card4 from '../components/Card4.astro';
+import Card5 from '../components/Card5.astro';
+import Card6 from '../components/Card6.astro';
+import Card7 from '../components/Card7.astro';
+import Card8 from '../components/Card8.astro';
+import Card9 from '../components/Card9.astro';
+import Card10 from '../components/Card10.astro';
+---
+<Layout title="mpftest">
+  <body>
+    <nav class="navbar">
+      <div class="nav_logo"><img src="/assets/logo_mpfcerca.png" alt="https://mpfciudad.gob.ar"></div>
+      <div class="nav_items" id="_items">
+        <a href="/">Cyberbullying</a>
+        <a href="/item2.html">Grooming</a>
+        <a href="/item3.html">Discriminación</a>
+        <a href="/item4.html">Acoso</a>
+        <a href="/item5.html">Hostigamiento en redes sociales y mensajería instantánea</a>
+        <a href="/item6.html">Suministro de material pornográfico a menores de edad por medios informáticos</a>
+        <a href="/item7.html">Difusión no consentida de imágenes íntimas</a>
+        <a href="/item8.html">Difusión de imagenes de abuso sexual infantil</a>
+        <a href="/item9.html">Suplantación digital de identidad</a>
+        <a href="/item10.html">SimSwap</a>
+      </div>
+
+      <div class="nav_toggle" id="_toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </body>
+
+  <script>
+    const _toggle = document.getElementById('_toggle');
+    const _items = document.getElementById('_items');
+
+    if (_toggle) {
+      _toggle.onclick = () => {
+        _items?.classList.toggle('open');
+        _items?.classList.toggle('close');
+      };
+    }
+  </script>
+
+  <div class="bigcontainer">
+    <div class="container">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide"><Card7 /></div>
+            <div class="swiper-slide"><Card8 /></div>
+            <div class="swiper-slide"><Card9 /></div>
+            <div class="swiper-slide"><Card10 /></div>
+            <div class="swiper-slide"><Card6 /></div>
+            <div class="swiper-slide"><Card1 /></div>
+            <div class="swiper-slide"><Card2 /></div>
+            <div class="swiper-slide"><Card3 /></div>
+            <div class="swiper-slide"><Card4 /></div>
+            <div class="swiper-slide"><Card5 /></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script is:inline>
+    new Swiper('.swiper');
+  </script>
+
+  <style>
+    body {
+      margin: 0px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .navbar {
+      background-color: #006272;
+      height: 65px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 7px;
+      box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.384);
+    }
+
+    .nav_logo {
+      font-weight: bold;
+      font-size: 20px;
+      margin: 15px;
+      color: white;
+    }
+
+    .nav_logo img {
+      padding-top: 4px;
+      height: 43px;
+    }
+
+    .nav_items a {
+      margin: 15px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav_toggle {
+      display: none;
+    }
+
+    @media (max-width: 3840px) {
+      .nav_items {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #006272;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: 0.3s ease-in;
+        padding-top: 20px;
+
+      }
+
+      .nav_items a{
+        text-align: center;
+      }
+
+      .nav_toggle {
+        display: flex !important;
+        flex-direction: column;
+        margin: 15px;
+      }
+
+      .nav_toggle span {
+        width: 30px;
+        height: 4px;
+        background: white;
+        margin-bottom: 5px;
+        border-radius: 2px;
+        transform-origin: 5px 0px;
+        transition: all 0.2s linear;
+      }
+
+      .close span {
+        transform: rotate(45deg) translate(0px, 0px);
+      }
+
+      .close span:nth-child(2) {
+        display: none;
+      }
+
+      .close span:nth-child(3) {
+        transform: rotate(-45deg) translate(-5px, 1px);
+      }
+
+      .open {
+        transform: translateX(0) !important;
+      }
+    }
+
+    .bigcontainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    .container {
+      position: relative;
+      height: 900px;
+      background-color: transparent;
+    }
+
+    .swiper {
+      text-align: center;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+</Layout>

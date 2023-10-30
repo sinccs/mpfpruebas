@@ -1,0 +1,8 @@
+	<body>
+		<MenuContainer>
+			{menuItems.map((item) => <MenuItemView {...item} />)}
+		</MenuContainer>
+
+		
+		<slot />
+	</body>
