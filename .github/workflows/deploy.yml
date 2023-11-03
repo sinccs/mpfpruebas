@@ -15,9 +15,11 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
-      - name: Create dist directory
-        run: mkdir -p dist
       - uses: actions/deploy-pages@v1
         with:
           # The path to the built website
